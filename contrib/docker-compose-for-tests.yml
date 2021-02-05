@@ -65,3 +65,11 @@ services:
     working_dir: /go/src/github.com/oliver006/redis_exporter
     volumes:
       - ..:/go/src/github.com/oliver006/redis_exporter
+
+
+  exporter:
+    build:
+      context: ../
+      dockerfile: ./docker/Dockerfile.amd64
+    ports:
+      - 9121

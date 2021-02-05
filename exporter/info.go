@@ -280,7 +280,7 @@ func (e *Exporter) handleMetricsCommandStats(ch chan<- prometheus.Metric, fieldK
 		cmdstat_set:calls=61,usec=3139,usec_per_call=51.46
 		cmdstat_setex:calls=75,usec=1260,usec_per_call=16.80
 	*/
-	splitKey := strings.Split(fieldKey, "_")
+	splitKey := strings.SplitN(fieldKey, "_", 2)
 	if len(splitKey) != 2 {
 		return
 	}
