@@ -71,5 +71,7 @@ services:
     build:
       context: ../
       dockerfile: ./docker/Dockerfile.amd64
+    environment:
+      - REDIS_ADDR=redis://redis6:6379
     ports:
-      - 9121
+      - 9121:9121
